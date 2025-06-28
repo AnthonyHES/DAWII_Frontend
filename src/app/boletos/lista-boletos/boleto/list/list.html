@@ -1,0 +1,27 @@
+<h2>Lista de Boletos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Vuelo</th>
+      <th>Asiento</th>
+      <th>Precio</th>
+      <th>Fecha</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let b of boletos">
+      <td>{{ b.id }}</td>
+      <td>{{ b.vuelo?.numeroVuelo }}</td>
+      <td>{{ b.asiento }}</td>
+      <td>{{ b.precio }}</td>
+      <td>{{ b.fechaCompra | date:'short' }}</td>
+      <td>
+  <button [routerLink]="['/boletos/detalle', b.id]">Ver</button>
+  <button [routerLink]="['/boletos/editar', b.id]">Editar</button>
+  <button (click)="eliminar(b.id!)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
