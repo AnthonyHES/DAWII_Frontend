@@ -1,8 +1,0 @@
-<h2>{{ editMode ? 'Editar' : 'Nuevo' }} Boleto</h2>
-
-<form (ngSubmit)="guardar()">
-  <label>Asiento: <input [(ngModel)]="boleto.asiento" name="asiento" required /></label><br />
-  <label>Precio: <input type="number" [(ngModel)]="boleto.precio" name="precio" required /></label><br />
-  <!-- Aquí podrías poner selects para vuelo y usuario si los gestionas -->
-  <button type="submit">Guardar</button>
-</form>
